@@ -1,4 +1,4 @@
-export class UpdateMachineDto {  
+export class UpdateUserDto {  
     id: number;
     name: string;
   }

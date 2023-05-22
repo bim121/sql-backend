@@ -1,17 +1,13 @@
 import { Module } from '@nestjs/common';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Machine } from './entity/machine.entity';
-import { MachineModule } from './machine/machine.module';
+import {  UserModule } from './user/user.module';
+import { DatabaseModule } from './database/database.module';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'machine.db',
-      entities: [Machine],
-      synchronize: true, 
-    }),
-    MachineModule,
+    DatabaseModule,
+    UserModule,
+    PostModule
     ],
   controllers: [],
   providers: [],
